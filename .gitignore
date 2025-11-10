@@ -8,3 +8,4 @@ foo.*
 data
 *.lock
 theme.lua
+lazy-lock.json
