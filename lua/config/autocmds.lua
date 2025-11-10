@@ -25,6 +25,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   }),
   callback = function(args)
     local colorschemes = {
+      ["tokyonight-night"] = "Tokyo Night Night",
       ["tokyonight-day"] = "Tokyo Night Day",
       ["tokyonight-storm"] = "Tokyo Night Storm",
       ["catppuccin-frappe"] = "Catppuccin Frappe",
@@ -35,6 +36,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
       ["gruvbox-material"] = "Gruvbox Material",
       ["dracula"] = "Dracula (Official)",
       ["vesper"] = "Vesper",
+      ["kanagawa"] = "Kanagawa",
       -- add more color schemes here ...
     }
     local colorscheme = colorschemes[args.match]
