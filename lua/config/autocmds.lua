@@ -8,6 +8,7 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 -- Auto-open mini.files when nvim is launched with a directory
 -- Auto-open mini.files when launching with a directory
+
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     local arg = vim.fn.argv(0)
@@ -17,6 +18,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
   desc = "Auto-open mini.files on directory launch",
 })
+
 vim.api.nvim_create_autocmd("ColorScheme", {
   group = vim.api.nvim_create_augroup("wezterm_colorscheme", {
     clear = true,
