@@ -9,14 +9,14 @@ return {
       transparent_bg = true,
       transparent_cursorline = true,
       overflow = {
-        mode = "oneline", -- "wrap": split into lines, "none": no truncation, "oneline": keep single line
+        mode = "wrap", -- "wrap": split into lines, "none": no truncation, "oneline": keep single line
         padding = 0, -- Extra characters to trigger wrapping earlier
       },
 
       hi = {
         error = "DiagnosticError", -- Highlight for error diagnostics
-        warn = "NonText", -- Highlight for warning diagnostics
-        info = "NonText", -- Highlight for info diagnostics
+        warn = "DiagnosticHint", -- Highlight for warning diagnostics
+        info = "DiagnosticHint", -- Highlight for info diagnostics
         hint = "NonText", -- Highlight for hint diagnostics
         arrow = "NonText", -- Highlight for the arrow pointing to diagnostic
         background = "CursorLine", -- Background highlight for diagnostics
@@ -36,9 +36,5 @@ return {
         -- severity = nil, -- Filter multiline diagnostics by severity (e.g., { vim.diagnostic.severity.ERROR })
       },
     },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = { diagnostics = { virtual_text = false } },
   },
 }

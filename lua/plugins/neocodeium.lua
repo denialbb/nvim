@@ -24,7 +24,6 @@ return {
       reject = "<C-e>", -- Clear/reject
     },
 
-    -- Filetype exclusions: Disable in non-code buffers
     filetypes = {
       enabled = true,
       disabled = {
@@ -40,7 +39,6 @@ return {
       },
     },
 
-    -- Other sane defaults
     show_status = true, -- Show status in lualine/winbar (if available)
     suggest = {
       min_triggers = 2, -- Start suggesting after 2 chars
@@ -50,7 +48,6 @@ return {
     local neocodeium = require("neocodeium")
     neocodeium.setup(opts)
 
-    -- === FIXED: Only run cmp integration after cmp is loaded ===
     local group =
       vim.api.nvim_create_augroup("neocodeium_cmp", { clear = true })
     vim.api.nvim_create_autocmd("User", {
@@ -69,7 +66,6 @@ return {
           cmp_open = false
         end)
 
-        -- Optional: Auto-trigger NeoCodeium after cmp closes
         vim.api.nvim_create_autocmd("InsertEnter", {
           callback = function()
             if not cmp_open then

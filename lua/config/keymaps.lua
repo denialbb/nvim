@@ -52,3 +52,12 @@ vim.keymap.set("v", "<C-r>", function()
   vim.cmd(".,$s/" .. pattern .. "/" .. vim.fn.escape(replace, [[/\]]) .. "/g")
   vim.cmd("nohlsearch")
 end, { desc = "Replace all selected text" })
+
+vim.keymap.set("n", "<leader>ll", function()
+  local cfg = vim.diagnostic.config()
+  local enabled = not cfg.virtual_lines
+  vim.diagnostic.config({
+    virtual_lines = enabled,
+  })
+  print("lsp_lines: " .. (enabled and "ON" or "OFF"))
+end, { desc = "Toggle lsp_lines" })

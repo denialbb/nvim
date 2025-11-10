@@ -4,4 +4,6 @@ return {
   { "yetone/avante.nvim", enabled = false },
   { "nvim-mini/mini.animate", enabled = false },
   { "hrsh7th/nvim-cmp", enabled = false },
+  { "rachartier/tiny-inline-diagnostic.nvim", enabled = false },
+  { "isaksamsten/better-virtual-text.nvim", enabled = false },
 }
