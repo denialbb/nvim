@@ -6,3 +6,5 @@ debug
 foo.*
 *.log
 data
+*.lock
+theme.lua
