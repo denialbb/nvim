@@ -3,15 +3,13 @@ return {
   event = "VeryLazy",
   init = function()
     vim.o.timeout = true
-    vim.o.timeoutlen = 300
+    vim.o.timeoutlen = 200
   end,
   opts = {
-    preset = "modern",
+    preset = "helix",
     win = {
       border = "single",
-      height = { max = 10 },
-      padding = { 1, 1 },
-      wo = { winblend = 0 },
+      height = { max = 15 },
     },
     icons = {
       mappings = false,
