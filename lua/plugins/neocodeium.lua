@@ -9,8 +9,8 @@ return {
     local nc = require("neocodeium")
 
     nc.setup({
-      silent = true, -- Less spam in :messages
-      manual = false, -- Auto-show suggestions
+      silent = true,
+      manual = true,
       filetypes = {
         ["*"] = true,
         markdown = false,
@@ -19,6 +19,12 @@ return {
       },
     })
 
+    vim.keymap.set(
+      "i",
+      "<C-e>",
+      nc.cycle_or_complete,
+      { desc = "NeoCodeium: Complete" }
+    )
     vim.keymap.set("i", "<C-a>", nc.accept, { desc = "NeoCodeium: Accept" })
     vim.keymap.set(
       "i",

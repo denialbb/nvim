@@ -22,6 +22,14 @@ vim.keymap.set("n", "{", "{zz", { desc = "scroll up and center" })
 vim.keymap.set("n", "}", "}zz", { desc = "scroll down and center" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "keep cursor centered" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "keep cursor centered" })
+vim.keymap.set("n", "gd", "gdzz", { desc = "go to def and center" })
+vim.keymap.set("n", "<C-o>", "<C-o>zz", { desc = "go back and center" })
+vim.keymap.set("n", "<leader>qj", "<cmd>cnext<CR>", { desc = "quickfix next" })
+vim.keymap.set("n", "<leader>qk", "<cmd>cprev<CR>", { desc = "quickfix prev" })
+vim.keymap.set("n", "<C-b>b", "<cmd>CompilerRedo<CR>")
+vim.keymap.set("n", "<C-b><C-b>", "<cmd>CompilerRedo<CR>")
+vim.keymap.set("n", "<C-b><C-o>", "<cmd>CompilerOpen<CR>")
+vim.keymap.set("n", "<C-b><C-t>", "<cmd>CompilerToggleResults<CR>")
 vim.keymap.set(
   "n",
   "gd",
@@ -33,18 +41,6 @@ vim.keymap.set(
   "<leader>s",
   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Search And Replace The Word Under The Cursor" }
-)
-vim.keymap.set(
-  "i",
-  "<C-Space>",
-  "<cmd>lua require('supermaven').complete()<CR>",
-  { desc = "supermaven complete" }
-)
-vim.keymap.set(
-  "n",
-  "<leader>sc",
-  "<cmd>lua require('supermaven').chat()<CR>",
-  { desc = "supermaven chat", noremap = true, silent = true }
 )
 vim.keymap.set("n", "K", "vim.lsp.buf.hover", { desc = "lsp hover" })
 
