@@ -2,13 +2,13 @@ return {
   "ibhagwan/fzf-lua",
   bind = {},
   opts = function(_, opts)
-    vim.keymap.set("n", "<C-f>", ":FzfLua files<CR>", { desc = "Find files" })
-    vim.keymap.set(
-      "n",
-      "<leader>fg",
-      ":FzfLua live_grep<CR>",
-      { desc = "Find grep" }
-    )
+    -- vim.keymap.set("n", "<C-f>", ":FzfLua files<CR>", { desc = "Find files" })
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>fg",
+    --   ":FzfLua live_grep<CR>",
+    --   { desc = "Find grep" }
+    -- )
     opts.previewers = {
       builtin = {
         -- fzf-lua is very fast, but it really struggled to preview a couple files

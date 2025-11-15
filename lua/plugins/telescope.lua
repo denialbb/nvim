@@ -25,8 +25,8 @@ return {
       preview = false,
       layout_strategy = "vertical",
       layout_config = {
-        height = 20,
-        width = 50,
+        height = 50,
+        width = 80,
         prompt_position = "bottom",
       },
       path_display = { "smart" },

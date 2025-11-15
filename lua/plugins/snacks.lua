@@ -1,6 +1,16 @@
 return {
   "folke/snacks.nvim",
   opts = {
+    ---@class snacks.picker.Config
+    picker = {
+      keys = {
+        {
+          key = "<leader>fg",
+          action = ":lua Snacks.dashboard.pick('live_grep')",
+          desc = "Live Grep",
+        },
+      },
+    },
     ---@class snacks.dashboard.Config
     dashboard = {
       width = 35,

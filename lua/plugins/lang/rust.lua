@@ -1,14 +1,4 @@
 return {
-
-  -- Mason (install LSPs)
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = { "rust-analyzer" },
-    },
-  },
-
-  -- LSP config
   {
     "neovim/nvim-lspconfig",
     opts = {
