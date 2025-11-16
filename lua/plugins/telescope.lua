@@ -34,7 +34,7 @@ return {
         i = {
           ["<Esc>"] = "close",
           ["<C-c>"] = "close",
-          ["?"] = require("telescope.actions.layout").toggle_preview,
+          -- ["?"] = require("telescope.actions.layout").toggle_preview,
         },
       },
     },
