@@ -4,7 +4,7 @@ return {
     ---@type snacks.Config
     opts = {
       terminal = {
-        win = { style = "float", height = 0.5, width = 0.5, border = true },
+        win = { style = "float", height = 0.7, width = 0.7, border = false },
       },
     },
   },
