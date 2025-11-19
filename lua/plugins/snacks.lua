@@ -5,7 +5,15 @@ return {
   opts = {
     ---@class snacks.picker.Config
     picker = {
-      layout = { preset = "select" },
+      layout = {
+        preset = "select",
+        width = 0.6,
+      },
+      sources = {
+        grep = {
+          layout = { preset = "vertical" },
+        },
+      },
     },
     ---@class snacks.dashboard.Config
     dashboard = {
