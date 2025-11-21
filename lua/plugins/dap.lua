@@ -27,12 +27,21 @@ return {
         },
       })
 
+      dap.adapters.codelldb = {
+        type = "server",
+        port = "${port}",
+        executable = {
+          command = vim.fn.stdpath("data") .. "/mason/bin/codelldb",
+          args = { "--port", "${port}" },
+        },
+      }
+
       -- Configurations
       dap.configurations = {
         c = {
           {
-            name = "Launch file",
-            type = "cppdbg",
+            name = "Launch C (codelldb)",
+            type = "codelldb",
             request = "launch",
             program = function()
               return vim.fn.input(
@@ -42,17 +51,16 @@ return {
               )
             end,
             cwd = "${workspaceFolder}",
-            stopAtEntry = false,
-            MIMode = "lldb",
+            stopOnEntry = false,
+            args = {},
+            runInTerminal = false,
           },
+        },
+        cpp = {
           {
-            name = "Attach to lldbserver :1234",
-            type = "cppdbg",
+            name = "Launch C++ (cppdbg)",
+            type = "codelldb",
             request = "launch",
-            MIMode = "lldb",
-            miDebuggerServerAddress = "localhost:1234",
-            miDebuggerPath = "/usr/bin/lldb",
-            cwd = "${workspaceFolder}",
             program = function()
               return vim.fn.input(
                 "Path to executable: ",
@@ -60,6 +68,9 @@ return {
                 "file"
               )
             end,
+            cwd = "${workspaceFolder}",
+            stopOnEntry = false,
+            args = {},
           },
         },
         rust = {

@@ -7,7 +7,9 @@ return {
     picker = {
       layout = {
         preset = "select",
-        width = 0.6,
+        layout = {
+          max_width = 50,
+        },
       },
       sources = {
         grep = {

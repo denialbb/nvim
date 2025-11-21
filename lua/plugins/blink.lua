@@ -8,7 +8,7 @@ return {
       },
     },
     keymap = {
-      preset = "super-tab",
+      preset = "default",
       ["<C-Space>"] = { "show", "fallback" }, -- manual trigger
     },
   },
