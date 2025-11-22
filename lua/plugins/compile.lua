@@ -3,7 +3,18 @@ return {
     "Zeioth/compiler.nvim",
     cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
     dependencies = { "stevearc/overseer.nvim", "nvim-telescope/telescope.nvim" },
-    opts = {},
+    opts = {
+      disable_builtin = { "c", "cpp", "cmake" },
+      presets = {
+        cmake_build_run = {
+          name = "CMake Build & Run",
+          task = {
+            type = "overseer",
+            name = "CMake: Build and Run (exe in root)",
+          },
+        },
+      },
+    },
     keys = {
       {
         "<C-b>b",

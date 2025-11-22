@@ -70,3 +70,7 @@ vim.keymap.set("n", "<leader>ll", function()
   })
   print("lsp_lines: " .. (enabled and "ON" or "OFF"))
 end, { desc = "Toggle lsp_lines" })
+
+vim.keymap.set("n", "<leader><leader>", function()
+  require("snacks.picker").buffers()
+end, { desc = "Snacks: Buffers" })
