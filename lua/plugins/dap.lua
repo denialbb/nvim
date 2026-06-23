@@ -19,7 +19,9 @@ return {
 
       mason_dap.setup({
         ensure_installed = { "cppdbg" },
-        automatic_installation = true,
+        automatic_installation = {
+          exclude = { "chrome", "firefox" },
+        },
         handlers = {
           function(config)
             require("mason-nvim-dap").default_setup(config)
@@ -212,13 +214,14 @@ return {
   },
   {
     "mason-nvim-dap.nvim",
-    opts = {
-      ensure_installed = {
-        "codelldb",
-        "cpptools",
-        "delve",
-      },
-    },
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, { "codelldb", "cpptools", "delve" })
+      opts.ensure_installed = vim.tbl_filter(function(v)
+        return v ~= "chrome-debug-adapter"
+      end, opts.ensure_installed)
+      return opts
+    end,
   },
   {
     "leoluz/nvim-dap-go",

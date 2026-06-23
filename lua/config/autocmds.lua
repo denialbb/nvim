@@ -44,15 +44,28 @@ vim.api.nvim_create_autocmd("ColorScheme", {
       return
     end
     -- Write the colorscheme to a file
-    local filename = vim.fn.expand("$XDG_CONFIG_HOME/wezterm/colorscheme")
-    assert(type(filename) == "string")
-    local file = io.open(filename, "w")
-    assert(file)
-    file:write(colorscheme)
-    file:close()
-    vim.notify(
-      "Setting WezTerm color scheme to " .. colorscheme,
-      vim.log.levels.INFO
-    )
+    local config_dir = os.getenv("XDG_CONFIG_HOME")
+    if not config_dir or config_dir == "" then
+      config_dir = vim.fn.expand("~/.config")
+    end
+    local wezterm_dir = config_dir .. "/wezterm"
+    if vim.fn.isdirectory(wezterm_dir) == 0 then
+      vim.fn.mkdir(wezterm_dir, "p")
+    end
+    local filename = wezterm_dir .. "/colorscheme"
+    local file, err = io.open(filename, "w")
+    if file then
+      file:write(colorscheme)
+      file:close()
+      vim.notify(
+        "Setting WezTerm color scheme to " .. colorscheme,
+        vim.log.levels.INFO
+      )
+    else
+      vim.notify(
+        "Failed to write WezTerm colorscheme: " .. tostring(err),
+        vim.log.levels.WARN
+      )
+    end
   end,
 })
