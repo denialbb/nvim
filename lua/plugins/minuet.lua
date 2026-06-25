@@ -33,8 +33,6 @@ return {
 
       require("minuet").setup({
         provider = "openai_compatible",
-        notify = "debug",
-
         request_timeout = 3,
 
         provider_options = {
@@ -42,9 +40,7 @@ return {
             name = "nvidia",
             end_point = "https://integrate.api.nvidia.com/v1/chat/completions",
             api_key = "NVIDIA_API_KEY",
-
             model = "qwen/qwen3-next-80b-a3b-instruct",
-
             stream = false,
 
             optional = {
@@ -55,12 +51,24 @@ return {
           },
         },
         virtualtext = {
-          auto_trigger_ft = {}, -- all filetypes
+          enabled = true,
+
+          auto_trigger_ft = {
+            "lua",
+            "python",
+            "javascript",
+            "typescript",
+            "go",
+            "rust",
+            "c",
+            "cpp",
+          },
+
           keymap = {
             accept = "<C-a>",
             accept_line = "<C-l>",
-            next = "<C-)>",
-            prev = "<C-(>",
+            next = "<C-j>",
+            prev = "<C-k>",
             dismiss = "<C-e>",
           },
         },

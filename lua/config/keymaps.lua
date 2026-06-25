@@ -44,6 +44,7 @@ vim.keymap.set(
   { desc = "Search And Replace The Word Under The Cursor" }
 )
 vim.keymap.set("n", "K", "vim.lsp.buf.hover", { desc = "lsp hover" })
+vim.keymap.set("i", "<M-h>", "vim.lsp.buf.signature_help", { silent = true })
 
 vim.keymap.set("v", "<C-r>", function()
   vim.cmd("normal! y")
