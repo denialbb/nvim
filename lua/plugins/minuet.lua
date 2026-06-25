@@ -33,7 +33,7 @@ return {
 
       require("minuet").setup({
         provider = "openai_compatible",
-        request_timeout = 3,
+        request_timeout = 5,
 
         provider_options = {
           openai_compatible = {
@@ -53,17 +53,7 @@ return {
         virtualtext = {
           enabled = true,
 
-          auto_trigger_ft = {
-            "lua",
-            "python",
-            "javascript",
-            "typescript",
-            "go",
-            "rust",
-            "c",
-            "cpp",
-          },
-
+          auto_trigger_ft = {},
           keymap = {
             accept = "<C-a>",
             accept_line = "<C-l>",
