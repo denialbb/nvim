@@ -75,3 +75,7 @@ end, { desc = "Toggle lsp_lines" })
 vim.keymap.set("n", "<leader><leader>", function()
   require("snacks.picker").buffers()
 end, { desc = "Snacks: Buffers" })
+
+vim.keymap.set("n", "<leader>uC", function()
+  require("snacks.picker").colorschemes()
+end, { desc = "Colorschemes (Snacks)" })

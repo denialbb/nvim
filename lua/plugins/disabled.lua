@@ -8,4 +8,5 @@ return {
   { "rachartier/tiny-inline-diagnostic.nvim", enabled = false },
   { "isaksamsten/better-virtual-text.nvim", enabled = false },
   { "ibhagwan/fzf-lua", enabled = false },
+  { "nvim-telescope/telescope.nvim", enabled = false },
 }

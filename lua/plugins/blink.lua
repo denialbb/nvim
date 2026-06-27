@@ -12,7 +12,7 @@ return {
     },
     keymap = {
       preset = "default",
-      ["<C-Space>"] = { "show", "hide", "fallback" },
+      ["<C-;>"] = { "show", "hide", "fallback" },
     },
   },
 }
